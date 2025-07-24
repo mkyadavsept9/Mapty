@@ -267,6 +267,7 @@ class App {
 
   _getFromLocalStorage() {
     const data = JSON.parse(localStorage.getItem('workouts'));
+    if(!data) return;
     this.#workouts = data;
 
     this.#workouts.forEach(work => this._renderWorkout(work));
